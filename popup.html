@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+#container {
+    margin: 10px 20px;
+    min-width: 300px;
+}
+textarea {
+    width: 100%;
+    resize: none;
+}
+
+input[type="text"],input[type=number],textarea {
+  width: 100%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus,input[type=number]:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+input[type=button],input[type=submit]{
+  cursor: pointer;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  float: right;
+}
+input[type=button]:hover,input[type=submit]:hover{
+    background-color: lighten(#1b3d4d, 5%);
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <form id="form">
+                <input id="text" type="text" name="" placeholder="imananisiteru" autofocus>
+                <input type="submit" id="button" value="save">
+            </form>
+
+            <div>
+                <textarea id="textarea" readonly></textarea>
+                    <input type="button" id="clearButton" value="clear">
+            </div>
+
+            <div>
+                <label for="">
+                    interval: <input id="interval" type="number" max="1000" min="1">
+                </label>
+            </div>
+            <div>
+                <label for="enabled">
+                    <input id="enabled" type="checkbox" name="">
+                    <span id="enabledText"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- CSP -->
+    <script src="popup.js"></script>
+</body>
+</html>
